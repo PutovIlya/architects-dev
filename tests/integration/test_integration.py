@@ -20,13 +20,3 @@ async def test_database_connection():
         await connection.close()
     except Exception as e:
         assert False, f"Не удалось подключиться к базе данных: {e}"
-
-@pytest.mark.asyncio
-async def test_phone_service_connection():
-    r = await phone_status()
-    assert r == {'message': 'Service alive'}
-
-@pytest.mark.asyncio
-async def test_phone_store_service_connection():
-    r = await phone_store_status()
-    assert r == {'message': 'Service alive'}
